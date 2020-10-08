@@ -1,0 +1,141 @@
+body {
+  /* COLOR */
+  background-color: #f1f1f1;
+  /* background-color: #e1f5fe; */
+  color: #2D2D2D;
+
+  /* FONT */
+  font-size: 16px;
+  font-weight: lighter;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  /* line-height: 1.6em; */
+
+  /* FORMAT */
+
+
+}
+
+/******************** Navbar container ********************/
+.navBar {
+  overflow: hidden;
+
+  /*#01579B*/
+  background-color: #01579B;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #01579B;
+}
+
+/* Links inside the navbar */
+.navBar a {
+  float: left;
+
+  font-size: 16px; 
+  color: white;
+  text-align: center;
+  padding: 18px 18px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropdownBtn {
+  font-size: 16px; 
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #01579B;
+  border: none;
+  outline: none;
+  color: white;
+
+  padding: 18px 18px;
+  background-color: inherit;
+  font-family: inherit; 
+  margin: 0;
+}
+
+/* hover color */
+.navBar a:hover, .dropdown:hover .dropdownBtn {
+  background-color: #0277BD;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdownList {
+  display: none;
+  position: absolute;
+  background-color: #ECEFF1;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdownList a {
+  float: none;
+  color: #263238;
+  padding: 12px 16px;
+  text-shadow: none;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdownList a:hover {
+  background-color: #BBDEFB;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdownList {
+  display: block;
+}
+
+/******************** END OF Navbar ********************/
+
+.container * {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  height: 88vh;;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #e1f5fe;
+  font-size: 14px;
+  resize: none;
+}
+
+/* Overwrite default styles of hr */
+.container {
+  border: 1px solid #0277bd;
+  border-top: none;
+  margin-bottom: 10px;
+}
+
+/* Set a style for the submit/register button */
+.container .submit {
+  background-color: #0277BD;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+.container .submit:hover {
+  opacity:1;
+}

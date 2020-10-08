@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+      <meta name="viewport" charset="utf-8" />
+
+      <title>ChatChat_DFI</title>
+      <link rel="stylesheet" href="user_feedback.css">
+
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <div class="navBar">
+      <a href="/user">Home</a>
+      <div class="dropdown">
+        <button class="dropdownBtn" th:text="${session.name}" value="User"></button>
+        <div class="dropdownList">
+          <a href="/profile">Profile</a>
+          <a href="/history">History</a>
+          <a href="/home">Log Out</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdownBtn">Ask ChatChat</button>
+        <div class="dropdownList">
+          <a href="/chat_dfi">&lt;DFI&gt;</a>
+          <a href="/chat_edu">&lt;Education&gt;</a>
+        </div>
+      </div>
+    </div>
+    <!-- END OF NAVIGATION BAR -->
+
+
+    <div class="container">
+      <h1>Feedback</h1>
+      <h3> We appreciate your feedback as it will help us improve our service.</h3>
+      <p>How was your experience with our website today?</p>
+
+      <form id="feedback" action="/feedback" method="POST">
+        <b>Comment:</b><br>
+        <textarea class="comment-input" classtype="text" placeholder="Please write your comment here...." name="comment" required></textarea>
+        <button class="submit" type="submit">Submit</button>
+      </form>
+      <p th:if="${fb_submitted}" style="font-weight: bold; text-align: center">Feedback submitted successfully!</p>
+    </div>
+  </body>
+</html>

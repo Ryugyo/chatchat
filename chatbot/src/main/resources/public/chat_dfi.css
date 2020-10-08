@@ -1,0 +1,316 @@
+/***** COLOR PALETTE *****/
+/* [BLUE]from light to dark */
+/*
+#e1f5fe
+#80d8ff
+#40c4ff
+#00b0ff
+#0091ea
+#0277bd
+*/
+/* [PINK]from dark to light */
+/*
+#a52c55
+#ec407a
+#ef6694
+*/
+
+body {
+  /* COLOR */
+  background-color: #f1f1f1;
+  /* background-color: #e1f5fe; */
+  color: #2D2D2D;
+
+  /* FONT */
+  font-size: 16px;
+  font-weight: lighter;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  /* line-height: 1.6em; */
+
+  /* FORMAT */
+  height: 100%;
+}
+
+
+/******************** Navbar container ********************/
+.navBar {
+  overflow: hidden;
+
+  /*#01579B*/
+  background-color: #01579B;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #01579B;
+}
+
+/* Links inside the navbar */
+.navBar a {
+  float: left;
+
+  font-size: 16px; 
+  color: white;
+  text-align: center;
+  padding: 18px 18px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropdownBtn {
+  font-size: 16px; 
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #01579B;
+  border: none;
+  outline: none;
+  color: white;
+
+  padding: 18px 18px;
+  background-color: inherit;
+  font-family: inherit; 
+  margin: 0;
+}
+
+/* hover color */
+.navBar a:hover, .dropdown:hover .dropdownBtn {
+  background-color: #0277BD;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdownList {
+  display: none;
+  position: absolute;
+  background-color: #ECEFF1;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdownList a {
+  float: none;
+  color: #263238;
+  padding: 12px 16px;
+  text-shadow: none;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdownList a:hover {
+  background-color: #BBDEFB;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdownList {
+  display: block;
+}
+
+/******************** END OF Navbar ********************/
+
+
+
+/******************** Chat Window ********************/
+
+.chatBox {
+  position: relative;
+  height: 88vh; 
+  border: 2px solid #0277bd;
+  border-top: none;
+  display: block;
+  flex-direction: column;
+  background-color: white;
+}
+
+#chat {
+  /* border-bottom: 2px #0277bd solid; */
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  overflow-y: scroll;
+  width: 100%;
+  align-self: center;
+}
+
+.userInputBox {
+  position: absolute;
+  bottom: 0;
+
+  display: flex;
+  border-top: #0277bd solid 2px;
+  height: 15%;
+  width: 100%;
+}
+
+#userInput {
+  border: 0px;
+  flex: 5;
+  padding: 5px;
+  color: #0277bd;
+  resize: none;
+  font-size: 14px;
+}
+
+#sendBtn {
+  flex: 1;
+  font-size: 14px;
+  color: white;
+  background-color: #01579B;
+  border-radius: 5px;
+  border: none;
+  margin: 1px;
+
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: bold;
+  /* text-shadow: 1px 1px 2px #DDD; */
+
+}
+
+#sendBtn:hover {
+  background-color: #0277BD
+  ;
+  /* color: #2D2D2D; */
+
+}
+
+::placeholder {
+  color: #0277bd;
+  font-size: 14px;
+}
+
+#chat .timestamp {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 12px;
+}
+
+#chat article {
+  /* float: left;
+  width: 68%; */
+  width:45%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 10px 0;
+  margin-left: 5px;
+
+  background: #e1f5fe;
+  padding: 10px;
+  border-left: 5px solid #80d8ff;
+  position: relative;
+  word-wrap: break-word;
+}
+
+#chat #userMsg .timestamp {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+}
+
+#chat #userMsg {
+  /* float: right;
+  width: 68%; */
+  width:40%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* margin-right: 10%; */
+  background: #eee;
+  padding: 10px;
+
+
+  float: right;
+  margin-left: 59.7%;
+  padding: 20px 10px 0 0;
+  
+  border-right: 5px solid #aaa;
+  position: relative;
+  word-wrap: break-word;
+  text-align: right;
+}
+
+#chat #userMsg .timestamp {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.load_container {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
+.loading{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  /* left: 10%; */
+  transform: translate(-50%,-50%);
+  height: 20px;
+  display: flex;
+  align-items: center;
+  visibility: visibile;
+  animation:loading 0.8s ease-in 1s forwards;
+}
+
+.obj{
+  width: 4px;
+  height: 10px;
+  background: #2980b9;
+  margin: 0 3px;
+  border-radius: 5px;
+  animation: loading 0.8s infinite;
+ }
+.obj:nth-child(2){
+  animation-delay: 0.1s;
+}
+.obj:nth-child(3){
+  animation-delay: 0.2s;
+}
+.obj:nth-child(4){
+  animation-delay: 0.3s;
+}
+.obj:nth-child(5){
+  animation-delay: 0.4s;
+}
+.obj:nth-child(6){
+  animation-delay: 0.5s;
+}
+.obj:nth-child(7){
+  animation-delay: 0.6s;
+}
+.obj:nth-child(8){
+  animation-delay: 0.7s;
+}
+
+
+@keyframes loading {
+  0%{
+    height: 0;
+  }
+  50%{
+    height: 30px;
+  }
+  100%{
+    height: 0;
+  }
+  to{
+    overflow: hidden;
+  }
+}
+
+
+
+
+

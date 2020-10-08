@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Admin</title>
+      <link rel="stylesheet" href="admin.css">
+  </head>
+  <body>
+    <div class="navBar">
+      <a href="/admin">Home</a>
+      <div class="dropdown">
+        <button class="dropdownBtn" th:text="${session.name}" value="Admin"> 
+          <!-- <i class="fa fa-caret-down"></i> -->
+        </button>
+        <div class="dropdownList">
+            <a href="/admin_crawler">Start Crawling</a>
+            <a href="/file_upload">Upload File</a>
+            <a href="/view_feedback">Check Feedback</a>
+            <a href="/home">Log Out</a>
+          </div>
+      </div> 
+    </div>
+    <img class="logo-img" src="logo_transparent.png" alt="logo">
+    <div class="footer">
+      <p>Faculty of Computer Science at UofT</p>
+    </div>
+  </body>
+</html>

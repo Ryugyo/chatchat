@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+      <meta name="viewport" charset="utf-8" />
+
+      <title>ChatChat_DFI</title>
+      <link rel="stylesheet" href="file_upload.css">
+
+  </head>
+  <body onload="displayFileNames()">
+    <script type="text/javascript" th:inline="javascript">
+      function displayFileNames() {      
+        var json = /*[(${files})]*/ '';
+        console.log(json);
+        for (i in json) {
+            document.getElementById('files').innerHTML += 
+            '<article><b>'+json[i]+'</b></article>';
+          }
+          
+        }
+    
+    </script>
+      
+    <!-- NAVIGATION BAR -->
+    <div class="navBar">
+      <a href="/admin">Home</a>
+      <div class="dropdown">
+        <button class="dropdownBtn" th:text="${session.name}" value="Admin"> 
+        </button>
+        <div class="dropdownList">
+          <a href="/admin_crawler">Start Crawling</a>
+          <a href="/view_feedback">Check Feedback</a>
+          <a href="/home">Log Out</a>
+        </div>
+      </div> 
+    </div>
+    <!-- END OF NAVIGATION BAR -->
+
+
+    <div class="container">
+      <h1>Upload new document.</h1>
+      <h3>All .pdf, .doc, .docx and .txt files are acceptable.</h3>
+
+      <form id="file-upload" action="/file_upload" method="POST" enctype="multipart/form-data">
+        <!-- <b>Comment:</b><br> -->
+        <input class="fileInput" type="file" name="file" multiple>
+        <button class="submit" type="submit">Submit</button>
+      </form>
+      <p th:if="${session.file_upload_failed}" style="color:red">Please provide a valid file.</p>
+      <p th:if="${session.file_upload_success}" style="font-weight: bold">Your file has been uploaded.</p>
+      <div id="files">
+        
+      </div>
+    </div>
+    <div class="footer">
+      <p>Faculty of Computer Science at UofT</p>
+    </div>
+  </body>
+</html>

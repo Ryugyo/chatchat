@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+      <meta name="viewport" charset="utf-8" />
+
+      <title>ChatChat_DFI</title>
+      <link rel="stylesheet" href="admin_feedback.css">
+
+  </head>
+  <body onload="displayReviews()">
+    <script type="text/javascript" th:inline="javascript">
+      function displayReviews() {      
+        var json = /*[(${fbs})]*/ '';
+        console.log(json);
+        for (i in json) {
+          var name = json[i].name;
+          var comment = json[i].feedback;
+          var time = json[i].time;
+          document.getElementById('reviews').innerHTML += 
+            '<article><b>'+name+':    </b><span>'+time+'</span><p>'+comment+'</p></article>';
+        }
+      }
+    
+    </script>
+
+    <!-- NAVIGATION BAR -->
+    <div class="navBar">
+      <a href="/admin">Home</a>
+      <div class="dropdown">
+        <button class="dropdownBtn" th:text="${session.name}" value="Admin"> 
+          <!-- <i class="fa fa-caret-down"></i> -->
+        </button>
+        <div class="dropdownList">
+          <a href="/admin_crawler">Start Crawling</a>
+          <a href="/file_upload">Upload File</a>
+          <a href="/home">Log Out</a>
+        </div>
+      </div> 
+    </div>
+    <!-- END OF NAVIGATION BAR -->
+
+
+    <div class="container">
+      <h1>Feedback</h1>
+      <!-- <form id="feedback_list" action="/view_feedback" method="GET">
+      </form> -->
+
+      <div id="reviews">
+        <!-- Javascript -->
+      </div>
+
+    </div>
+      <div class="footer">
+        <p>Faculty of Computer Science at UofT</p>
+      </div>
+  </body>
+</html>

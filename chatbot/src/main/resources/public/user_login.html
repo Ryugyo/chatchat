@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" charset="utf-8" />
+
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="user_login.css">
+  <script src="signup.js"></script>
+</head>
+
+<body>
+  <div class="navBar">
+    <a href="/home">Home</a>
+    <div class="dropdown">
+      <button class="dropdownBtn">Ask ChatChat 
+        <!-- <i class="fa fa-caret-down"></i> -->
+      </button>
+      <div class="dropdownList">
+        <a href="/chat_dfi">&lt;DFI&gt;</a>
+        <a href="/chat_edu">&lt;Education&gt;</a>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container">
+    <h1>Login</h1>
+    <p th:if="${session.client_login_failed}" style="color:red">Wrong password or username</p>
+    <form id="user-login" action="/user" method="POST">
+      <b>ChatChat Email</b><br>
+      <input type="email" pattern=".+@chatchat.com" placeholder="Enter Email" name="email" required>
+      <b>Password</b><br>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit" class="userLoginBtn">Sign In As User</button>
+    </form>
+
+  <div class="container signup">
+    <p>Don't have an account? <a href="/signup">Sign up</a>.</p>
+  </div>
+  
+  <div class="footer">
+    <p>Faculty of Computer Science at UofT</p>
+  </div>
+
+</body>
+</html>

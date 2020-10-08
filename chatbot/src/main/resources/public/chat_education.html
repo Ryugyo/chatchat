@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+      <meta name="viewport" charset="utf-8" />
+
+      <title>ChatChat_DFI</title>
+      <link rel="stylesheet" href="chat_dfi.css">
+
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <div class="navBar">
+      <a th:href="${session.loggedin} ? '/user' : '/home'">Home</a>
+      <div th:if="${session.loggedin}" class="dropdown">
+        <button class="dropdownBtn" th:text="${session.name}"></button>
+        <div class="dropdownList">
+          <a href="/profile">Profile</a>
+          <a href="/history">History</a>
+          <a href="/feedback">Feedback</a>
+          <a href="/home">Log Out</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdownBtn">Ask ChatChat</button>
+        <div class="dropdownList">
+          <a href="/chat_dfi">&lt;DFI&gt;</a>
+        </div>
+      </div>
+    </div>
+    <!-- END OF NAVIGATION BAR -->
+
+    <script>
+      setInterval(updateScroll,1000);
+
+      function updateScroll(){
+        var element = document.getElementById("chat");
+        element.scrollTop = element.scrollHeight;
+      }    
+    </script>
+
+    <!-- CHAT WINDOW -->
+    <div class="chatBox">
+      <div id="chat">
+        <!-- Built by JS -->
+      </div>
+      <div class="userInputBox">
+        <input id="userInput" placeholder="Please type your questions here ...">
+        <Button id="sendBtn">Send</Button>
+      </div>
+      <script src="watsonWebSocket.js"></script>
+
+    </div>
+    <!-- END OF CHAT WINDOW -->
+  </body>
+</html>

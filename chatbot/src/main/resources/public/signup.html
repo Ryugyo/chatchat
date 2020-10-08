@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" charset="utf-8" />
+
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
+  <script src="signup.js"></script>
+</head>
+
+<body>
+  <div class="navBar">
+    <a href="/home">Home</a>
+    <div class="dropdown">
+      <button class="dropdownBtn">Ask ChatChat 
+        <!-- <i class="fa fa-caret-down"></i> -->
+      </button>
+      <div class="dropdownList">
+        <a href="/chat_dfi">&lt;DFI&gt;</a>
+        <a href="/chat_edu">&lt;Education&gt;</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Referencing "https://www.w3schools.com/howto/howto_css_register_form.asp" -->
+  <!-- <form action="action_page.php"> -->
+    <div class="container">
+      <h1>Register</h1>
+      <p th:if="${session.signup_failed}" style="color:red">Username is already in use.</p>
+      <p>Please fill out this form to create an account with ChatChat.</p>
+      
+      <form id="signup" action="/signup" method="POST">
+
+        <b>ChatChat Email(Username)</b><br>
+        <input type="email" pattern=".+@chatchat.com" placeholder="Enter Your ChatChat Email... (or you can reate one with username...)" name="email" required>
+
+        <b>Password</b><br>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+        <b>Repeat Password</b><br>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+        <b>Name</b><br>
+        <input type="text" placeholder="Enter Your Full Name" name="name" required>
+
+        <b>Age</b><br>
+        <input type="number" placeholder="Enter Your Age" name="age" required>
+
+        <b>Occupation</b><br>
+        <input type="text" placeholder="Enter Your Occupation" name="job" required>  
+        <button type="submit" class="registerbtn" href="profile.html" >Sign Up As User</button>
+      </form>
+  
+    <div class="container signin">
+      <p>Already have an account? <a href="index.html">Sign in</a>.</p>
+    </div>
+  <!-- </form> -->
+  <!-- /form -->
+</body>
+</html>

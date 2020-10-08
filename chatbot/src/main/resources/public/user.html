@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+      <meta name="viewport" charset="utf-8" />
+
+      <title>User</title>
+      <link rel="stylesheet" href="user.css">
+  </head>
+  <body>
+    <div class="navBar">
+      <a href="/user">Home</a>
+      <div class="dropdown">
+        <button class="dropdownBtn" th:text="${session.name}" value="User"> 
+          <!-- <i class="fa fa-caret-down"></i> -->
+        </button>
+        <div class="dropdownList">
+          <a href="/profile">Profile</a>
+          <a href="/history">History</a>
+          <a href="/feedback">Feedback</a>
+          <a href="/home">Log Out</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdownBtn">Ask ChatChat 
+          <!-- <i class="fa fa-caret-down"></i> -->
+        </button>
+        <div class="dropdownList">
+          <a href="/chat_dfi">&lt;DFI&gt;</a>
+          <a href="/chat_edu">&lt;Education&gt;</a>
+        </div>
+      </div>
+    </div>
+    <img class="logo-img" src="logo_transparent.png" alt="logo">
+    <div class="footer">
+      <p>Faculty of Computer Science at UofT</p>
+    </div>
+
+    </body>
+</html>

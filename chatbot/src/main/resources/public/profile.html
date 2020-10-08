@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" charset="utf-8" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="profile.css">
+  <script src="signup.js"></script>
+</head>
+
+<body>
+  <!-- NavBar -->
+  <div class="navBar">
+    <a href="/user">Home</a>
+    <div class="dropdown">
+      <button class="dropdownBtn" th:text="${session.name}" value="User"> 
+        <!-- <i class="fa fa-caret-down"></i> -->
+      </button>
+      <div class="dropdownList">
+        <a href="/history">History</a>
+        <a href="/feedback">Feedback</a>
+        <a href="/home">Log Out</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdownBtn">Ask ChatChat 
+        <!-- <i class="fa fa-caret-down"></i> -->
+      </button>
+      <div class="dropdownList">
+        <a href="/chat_dfi">&lt;DFI&gt;</a>
+        <a href="/chat_edu">&lt;Education&gt;</a>
+      </div>
+    </div>
+  </div>
+  <!-- END OF NavBar -->
+  
+  <!-- <form action="action_page.php"> -->
+    <form id="profile" action="/profile" method="GET">
+      <h1>Profile</h1>  
+      <b>ChatChat Email(Username): </b><br>
+      <div id="email" th:text="${session.email}"></div><br>
+
+      <b>Name: </b><br>
+      <div id="name" th:text="${session.name}"></div><br>
+
+      <b>Age: </b><br>
+      <div id="age" th:text="${session.age}"></div><br>
+
+      <b>Occupation: </b><br>
+      <div id="job" th:text="${session.job}"></div>
+    </form>
+  <!-- </form> -->
+  <!-- /form -->
+    <div class="footer">
+      <p>Faculty of Computer Science at UofT</p>
+    </div>
+</body>
+</html>

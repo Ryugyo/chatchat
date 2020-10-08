@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- <meta name="crawler" content="width=device-width, initial-scale=1; charset=utf-8"> -->
+      <meta name="crawler" charset="utf-8" />
+      <title>ChatChat_DFI</title>
+      <link rel="stylesheet" href="webCrawler.css">
+
+  </head>
+  <body onload="displayCrawls()">
+    <script type="text/javascript" th:inline="javascript">
+      function displayCrawls() {      
+        var json = /*[(${crawls})]*/ '';
+        console.log(json);
+        for (i in json) {
+          var name = json[i].filename;
+          var content = json[i].content;
+          document.getElementById('crawl_list').innerHTML += 
+            '<article><b>'+name+':    </b><p>'+content+'</p></article>';
+        }
+      }
+    
+    </script>
+
+    <!-- NAVIGATION BAR -->
+    <div class="navBar">
+      <a href="/admin">Home</a>
+      <div class="dropdown">
+        <button class="dropdownBtn" th:text="${session.name}" value="Admin"></button>
+        <div class="dropdownList">
+          <a href="/file_upload">Upload File</a>
+          <a href="/view_feedback">Check Feedback</a>
+          <a href="/home">Log Out</a>
+        </div>
+      </div> 
+    </div>
+    <!-- END OF NAVIGATION BAR -->
+
+
+    <div class="container">
+      <h1>Web Crawl</h1>
+      <form id="start-crawl" action="/admin_crawler" method="POST">
+        <input id="webURL" type="text" placeholder="Enter website url" name="url" required>
+        <button id="crawlBtn" type="submit" class="submitBtn">Crawl</button>
+      </form>
+      <div id="crawl_list">
+      </div>
+    </div>
+    <div class="footer">
+      <p>Faculty of Computer Science at UofT</p>
+    </div> 
+  </body>
+</html>
